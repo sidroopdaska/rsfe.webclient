@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"jsx": "react",
+		"lib": [
+			"dom",
+			"es6",
+			"es2017"
+		],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"removeComments": false,
+		"outDir": "dist",
+		"rootDir": "./src",
+		"sourceMap": true,
+		"target": "es5",
+		"typeRoots": [
+			"node_modules/@types",
+		],
+		"suppressImplicitAnyIndexErrors": true
+	},
+	"exclude": [
+		"node_modules",
+		"build",
+	]
+}
