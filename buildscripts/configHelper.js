@@ -11,21 +11,19 @@ let extensions = [
 	".json"
 ];
 
-function getPlugins(apps, rtl, isDebug, minify = false) {
+function getPlugins(rtl, isDebug, minify = false) {
 	let ret = [
+		// new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(true),
-		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin()
 	];
 
 	if (isDebug) {
-		apps.forEach(app => {
-			ret.push(new HtmlWebpackPlugin({
-				template: path.resolve(__dirname, "./template.html"),
-				filename: `${app}.html`,
-				appScript: `${app}-bundle.js`,
-			}));
-		});
+		ret.push(new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, "./index.html"),
+			filename: `index.html`,
+			appScript: `app-bundle.js`,
+		}));
 	}
 
 	if (!isDebug) {
@@ -56,7 +54,10 @@ function getPlugins(apps, rtl, isDebug, minify = false) {
 }
 
 function getLoaders(isDebug) {
-	let scriptLoaders = isDebug ? ["react-hot", "ts-loader"] : ["ts-loader"];
+	let scriptLoaders = isDebug ? [
+		'babel-loader',
+		'awesome-typescript-loader',
+	] : ['awesome-typescript-loader'];
 
 	let ret = {
 		rules: [
@@ -102,6 +103,8 @@ function getLoaders(isDebug) {
 				exclude: /(node_modules)/,
 				use: scriptLoaders
 			},
+			{ test: /\.png$/, loader: "url-loader?limit=100000" },
+			{ test: /\.jpg$/, loader: "file-loader" },
 			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
 			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
 		]
@@ -110,14 +113,14 @@ function getLoaders(isDebug) {
 	return ret;
 }
 
-function getEntry(app, isDebug, port) {
+function getEntry(isDebug, port) {
 	let entry = {};
 
 	// Note: this can be extended for handling Multi-Page-Apps
-	entry[app] =
+	entry['app'] =
 		isDebug ? [
-			"webpack-dev-server/client?http://localhost:" + port,
-			"webpack/hot/only-dev-server",
+			// "webpack-dev-server/client?http://localhost:" + port,
+			// "webpack/hot/dev-server",
 			path.resolve(__dirname, `../src/layout/index.tsx`)
 		] :
 			path.resolve(__dirname, `../src/layout/index.tsx`);

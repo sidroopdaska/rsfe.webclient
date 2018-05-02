@@ -7,7 +7,8 @@ const path = require('path');
 const isDebug = false;
 
 const config = {
-    entry: configHelper.getEntry('app', isDebug, 3002),
+    mode: 'production',
+    entry: configHelper.getEntry(isDebug, 3002),
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "[name].bundle.min.js",
@@ -21,13 +22,12 @@ const config = {
         extensions: configHelper.extensions
 	},
     module: configHelper.getLoaders(isDebug),
-    plugins: configHelper.getPlugins(['app'], false, isDebug, true),
+    plugins: configHelper.getPlugins(false, isDebug, true),
     stats: {
         children: false,
         colors: true,
         modules: false
-    },
-    devtool: 'inline-source-map'
+    }
 };
 
 module.exports = config;

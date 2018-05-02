@@ -7,11 +7,12 @@ const path = require('path');
 const isDebug = true;
 
 const config = {
-    entry: configHelper.getEntry('app', isDebug, 3002),
+    mode: 'development',
+    entry: configHelper.getEntry(isDebug, 8080),
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "[name].bundle.js",
-        jsonpFunction: 'rsfe_webpackJsonp'
+        publicPath: '/'
     },
     resolve: {
         // Specify directories for where to look for modules
@@ -19,14 +20,23 @@ const config = {
             "node_modules"
         ],
         extensions: configHelper.extensions
-	},
+    },
     module: configHelper.getLoaders(isDebug),
-    plugins: configHelper.getPlugins(['app'], false, isDebug, false),
+    plugins: configHelper.getPlugins(false, isDebug, false),
     stats: {
         children: false,
         colors: true,
         modules: false
     },
+    context: path.resolve(__dirname, 'src'),
+    devServer: {
+        port: '8080',
+        noInfo: true,
+        quiet: false,
+        contentBase: path.resolve(__dirname, 'src'),
+        publicPath: '/'
+    },
+    watch: true
 };
 
 module.exports = config;
