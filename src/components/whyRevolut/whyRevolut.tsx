@@ -20,7 +20,7 @@ export class WhyRevolut extends React.Component<IWhyRevolutProps, {}> {
 	public renderCols = () => {
 		return this.props.data.map((d, idx) => {
 			return (
-				<Col lg='4' className='col' key={idx}>
+				<Col sm='12' lg='4' className='col' key={idx}>
 					<img src={d.imageSrc} alt={d.imageAlt} className='img' />
 					{d.content}
 				</Col>
@@ -29,8 +29,15 @@ export class WhyRevolut extends React.Component<IWhyRevolutProps, {}> {
 	}
 
 	public render() {
+		if (!this.props.data || !this.props.data.length)
+			return null;
+
 		return (
 			<div className='why-revolut'>
+				<div className='header'>
+					<h2>#why <span className='text-muted'>Revolut</span>
+					</h2>
+				</div>
 				<Row className='row'>
 					{this.renderCols()}
 				</Row>

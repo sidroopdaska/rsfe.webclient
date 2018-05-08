@@ -1,0 +1,19 @@
+.why-me {
+	.title {
+		text-align:center;
+		margin-top: -2rem;
+		margin-bottom: 4rem;
+	}
+
+	.heading {
+		line-height: 1;
+		letter-spacing: -.05rem;
+	}
+
+	.divider {
+		border: 0;
+		margin: 3.5rem 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	}
+}
