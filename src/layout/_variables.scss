@@ -1,0 +1,25 @@
+// Our variables
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:      #212529;
+$link-color:      #a0a6ad;
+$background-color:#fdfdfd;
+$blue-color:      #0177f4;
+$pink-color:      #eb008d;
+$grey-color:       #828282;
+$white-color:       #fff;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    1200px;
+
+// Media Queries
+$mobile:        400px;
+$tablet:        600px;
+$laptop:        800px;
