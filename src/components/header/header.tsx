@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import './header.scss';
-import { Urls } from '../definitions/urls';
-let meEdited = require('../assets/me-edited.png');
+import { Urls } from '../../definitions/urls';
+let meEdited = require('../../assets/me-edited.png');
 
-export interface IHeaderProps {
-
-}
+export interface IHeaderProps { }
 
 export class Header extends React.Component<IHeaderProps, {}> {
 	constructor(props: IHeaderProps) {
@@ -18,7 +16,7 @@ export class Header extends React.Component<IHeaderProps, {}> {
 			<Jumbotron fluid className='intro'>
 				<Container fluid>
 					<Row>
-						<Col lg='6' md={{ order: 2 }} className='text-center img'>
+						<Col lg='6' md={{ order: 2 }} className='text-center'>
 							<img src={meEdited} alt='Thumbnail' />
 						</Col>
 						<Col lg='6' md={{ order: 1 }} className='desc1'>
