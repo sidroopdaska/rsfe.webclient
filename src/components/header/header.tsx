@@ -27,7 +27,7 @@ export class Header extends React.Component<IHeaderProps, {}> {
 								I would like to help <span className='highlight'>Revolut</span> reach 'Revolut' as a
 							</h3>
 							<h3 className='desc2'>
-								<span className='highlight'>Senior Frontend Engineer</span>
+								<span className='highlight'>Senior Front-End Developer</span>
 								<span className='blink'>|</span>
 							</h3>
 						</Col>
