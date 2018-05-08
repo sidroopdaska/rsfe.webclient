@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Row } from 'reactstrap';
-import './conclusion.scss';
+import './footer.scss';
 import { Urls } from '../../definitions/urls';
 
-export interface IConclusionProps { }
+export interface IFooterProps { }
 
-export class Conclusion extends React.Component<IConclusionProps, {}> {
-	constructor(props: IConclusionProps) {
+export class Footer extends React.Component<IFooterProps, {}> {
+	constructor(props: IFooterProps) {
 		super(props);
 	}
 

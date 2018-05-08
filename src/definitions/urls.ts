@@ -5,4 +5,5 @@ export class Urls {
 	public static LinkedIn = 'http://siddharthsharma.io';
 	public static SDCGithub = 'https://github.com/sidroopdaska/SelfDrivingCar';
 	public static WhyRevolutGithubRepo = 'https://github.com/sidroopdaska/rsfe.webclient';
+	public static Mailto = 'mailto:hey@siddharthsharma.io';
 }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IWRColData } from '../components/whyRevolut/whyRevolut';
 import { IWMColData } from '../components/whyMe/whyMe';
 import { Urls } from './urls';
+import { ITimelinkBlock } from '../components/timeline/timeline';
 
 export class SiteContent {
 	public static WhyRevolut: Array<IWRColData> = [
@@ -32,9 +33,9 @@ export class SiteContent {
 			content:
 				<p>
 					Well, <span className='lead font-weight-bold'>I'm selfish!</span> I have worked with different technologies over
-					the past two years ranging from Embedded Systems to Full stack Web Development. But working for Five.ai's Deep Learning team
+					the past two years ranging from Embedded Systems to Full stack Web Development. But working for Revolut's Deep Learning team
 					is a different kind of beast. Creating truly autonomous vehicles that have the potential to bring about a
-					paradigm shift in how we commute is both exciting and scary. Mostly exciting though. By working for Five.ai,
+					paradigm shift in how we commute is both exciting and scary. Mostly exciting though. By working for Revolut,
 					I’ll directly improve my life along with the lives of millions of others. Everybody wins!
 				</p>
 		}
@@ -92,6 +93,54 @@ export class SiteContent {
 					new tools or processes that can promote this. A recent example of this is when I introduced
 					new frontend pipeline at work that improved the Page Load performance by 85% and developer time by 90%.
 				</p>
+		}
+	];
+
+	public static TimelineContent: Array<ITimelinkBlock> = [
+		{
+			heading: 'Inception',
+			imageAlt: null,
+			imageSrc: require('../assets/timeline-duck-img.svg'),
+			content:
+				<div>
+					<p>
+						My interest in Self-Driving Cars sparked when one of my colleagues at Microsoft, Ireland showed me a Youtube video
+						of <a href='https://www.youtube.com/watch?v=b0B6S2Ca75Q' target='_blank'>Ducky Town</a>, an advanced autonomy project at MIT. I was so captivated by the outcome of the project that I
+						decided to recreate it a month later at our local Hackathon.
+					</p>
+					<a href='https://github.com/sidroopdaska/SelfDrivingRCCar' className='read-more' target='_blank'>Self Driving RC Car</a>
+				</div>,
+			date: 'Jun 2017'
+		},
+		{
+			heading: 'Inception',
+			imageAlt: null,
+			imageSrc: require('../assets/timeline-duck-img.svg'),
+			content:
+				<div>
+					<p>
+						My interest in Self-Driving Cars sparked when one of my colleagues at Microsoft, Ireland showed me a Youtube video
+						of <a href='https://www.youtube.com/watch?v=b0B6S2Ca75Q' target='_blank'>Ducky Town</a>, an advanced autonomy project at MIT. I was so captivated by the outcome of the project that I
+						decided to recreate it a month later at our local Hackathon.
+					</p>
+					<a href='https://github.com/sidroopdaska/SelfDrivingRCCar' className='read-more' target='_blank'>Self Driving RC Car</a>
+				</div>,
+			date: 'Jun 2017'
+		},
+		{
+			heading: 'Inception',
+			imageAlt: null,
+			imageSrc: require('../assets/timeline-duck-img.svg'),
+			content:
+				<div>
+					<p>
+						My interest in Self-Driving Cars sparked when one of my colleagues at Microsoft, Ireland showed me a Youtube video
+						of <a href='https://www.youtube.com/watch?v=b0B6S2Ca75Q' target='_blank'>Ducky Town</a>, an advanced autonomy project at MIT. I was so captivated by the outcome of the project that I
+						decided to recreate it a month later at our local Hackathon.
+					</p>
+					<a href='https://github.com/sidroopdaska/SelfDrivingRCCar' className='read-more' target='_blank'>Self Driving RC Car</a>
+				</div>,
+			date: 'Jun 2017'
 		}
 	];
 }

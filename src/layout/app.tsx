@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import { Header } from '../components/header/header';
 import { Container } from 'reactstrap';
-import { WhyRevolut } from '../components/whyRevolut/whyRevolut';
-import { WhyMe } from '../components/whyMe/whyMe';
-import { BackToTop } from '../components/backToTop/backToTop';
+import { Header, WhyRevolut, WhyMe, BackToTop, Conclusion, Timeline } from '../components/index';
 import { SiteContent } from '../definitions/siteContent';
 
 export interface IAppProps { }
@@ -33,6 +30,9 @@ class App extends React.Component<IAppProps, {}> {
 					<WhyRevolut data={SiteContent.WhyRevolut} />
 					<hr className='section-divider' />
 					<WhyMe data={SiteContent.WhyMe} />
+					<hr className='section-divider' />
+					<Timeline data={SiteContent.TimelineContent} />
+					<Conclusion />
 				</Container>
 				<BackToTop />
 			</div>
