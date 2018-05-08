@@ -89,13 +89,12 @@ function getLoaders(isDebug) {
 				}
 			},
 			{
-				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=250000'
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
 			},
-			// Sass styles should be extracted into a separate bundle
 			{
 				test: /\.scss$/,
-				use: ['style-loader', 'css-loader', 'sass-loader']
+				use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader']
 			},
 			// All files with a .ts or .tsx extension will be handled by 'ts-loader'
 			{
@@ -103,8 +102,7 @@ function getLoaders(isDebug) {
 				exclude: /(node_modules)/,
 				use: scriptLoaders
 			},
-			{ test: /\.png$/, loader: "url-loader?limit=100000" },
-			{ test: /\.jpg$/, loader: "file-loader" },
+			{ test: /\.(jpg|png)$/, loader: "file-loader" },
 			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
 			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
 		]

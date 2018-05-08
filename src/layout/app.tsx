@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
+import { Header } from '../components/header';
 
 export interface IAppProps { }
 
@@ -10,7 +11,9 @@ class App extends React.Component<IAppProps, {}> {
 
 	public render() {
 		return (
-			<div>why so serious</div>
+			<div>
+				<Header />
+			</div>
 		);
 	}
 }
