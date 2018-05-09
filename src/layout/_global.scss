@@ -1,21 +1,9 @@
 @import 'variables';
-
-// Use media queries like this:
-// @include media-query($laptop) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
+@import 'mixins';
 
 /**
- * Reset some basic elements
- */
+* Reset some basic elements
+*/
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -24,8 +12,8 @@ dl, dd, ol, ul, figure {
 }
 
 /**
- * Basic styling
- */
+* Basic styling
+*/
 body {
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	font-weight: $base-font-weight;
@@ -44,8 +32,8 @@ body {
 
 
 /**
- * Set `margin-bottom` to maintain vertical rhythm
- */
+* Set `margin-bottom` to maintain vertical rhythm
+*/
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
@@ -54,8 +42,8 @@ ul, ol, dl, figure,
 }
 
 /**
- * Lists
- */
+* Lists
+*/
 ul, ol {
 	margin-left: $spacing-unit;
 }
@@ -68,24 +56,24 @@ li {
 }
 
 /**
- * Headings
- */
+* Headings
+*/
 h1, h2, h3, h4, h5, h6 {
 	font-weight: $base-font-weight;
 }
 
 p {
-  text-align: justify;
+	text-align: justify;
 }
 
 a, a:visited {
-  color: $blue-color;
+	color: $blue-color;
 }
 
 .section-divider {
-    text-align: center;
-    margin: 4rem 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+	text-align: center;
+	margin: 4rem 0;
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }

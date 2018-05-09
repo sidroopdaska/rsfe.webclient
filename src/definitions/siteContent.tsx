@@ -2,8 +2,11 @@ import * as React from 'react';
 import { IWRColData } from '../components/whyRevolut/whyRevolut';
 import { IWMColData } from '../components/whyMe/whyMe';
 import { Urls } from './urls';
-import { ITimelinkBlock } from '../components/timeline/timeline';
+import { ITimelineBlock } from '../components/timeline/timeline';
 
+/**
+ * Class to hold all the Site relevant content.
+ */
 export class SiteContent {
 	public static WhyRevolut: Array<IWRColData> = [
 		{
@@ -96,7 +99,7 @@ export class SiteContent {
 		}
 	];
 
-	public static TimelineContent: Array<ITimelinkBlock> = [
+	public static TimelineContent: Array<ITimelineBlock> = [
 		{
 			heading: 'Inception',
 			imageAlt: null,
@@ -143,4 +146,10 @@ export class SiteContent {
 			date: 'Jun 2017'
 		}
 	];
+
+	public static EmailId = 'hey@siddharthsharma.io';
+	public static Twitter = 'http://twitter.com/sidroopdaska';
+	public static Github = 'http://github.com/sidroopdaska';
+	public static LinkedIn = 'http://linkedin.com/in/sidroopdaska';
+	public static OnlineHandle = 'sidroopdaska';
 }

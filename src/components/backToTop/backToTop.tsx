@@ -9,7 +9,7 @@ export class BackToTop extends React.Component<IBackToTopProps, {}> {
 		super(props);
 	}
 
-	public componentWillMount() {
+	public componentDidMount() {
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 50) {
 				$('#back-to-top').fadeIn();
@@ -17,9 +17,7 @@ export class BackToTop extends React.Component<IBackToTopProps, {}> {
 				$('#back-to-top').fadeOut();
 			}
 		});
-	}
 
-	public backToTopOnClick = () => {
 		// scroll body to 0px on click
 		$('#back-to-top').click(function () {
 			$('#back-to-top').hide();
@@ -37,7 +35,6 @@ export class BackToTop extends React.Component<IBackToTopProps, {}> {
 				className='btn btn-lg back-to-top'
 				role='button'
 				title='Click to return on the top page'
-				onClick={this.backToTopOnClick}
 				data-placement='left'
 			>
 				<span className='fa fa-chevron-up text-white'></span>

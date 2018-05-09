@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { Container } from 'reactstrap';
-import { Header, WhyRevolut, WhyMe, BackToTop, Conclusion, Timeline } from '../components/index';
+import {
+	Header, WhyRevolut, WhyMe, BackToTop, Conclusion,
+	Timeline, Footer
+} from '../components/index';
 import { SiteContent } from '../definitions/siteContent';
 
 export interface IAppProps { }
@@ -9,17 +12,6 @@ export interface IAppProps { }
 class App extends React.Component<IAppProps, {}> {
 	constructor(props: IAppProps) {
 		super(props);
-	}
-
-	public backToTopOnClick = () => {
-		// scroll body to 0px on click
-		$('#back-to-top').click(function () {
-			$('#back-to-top').hide();
-			$('body,html').animate({
-				scrollTop: 0
-			}, 500);
-			return false;
-		});
 	}
 
 	public render() {
@@ -35,6 +27,7 @@ class App extends React.Component<IAppProps, {}> {
 					<Conclusion />
 				</Container>
 				<BackToTop />
+				<Footer />
 			</div>
 		);
 	}

@@ -3,10 +3,10 @@ import * as $ from 'jquery';
 import './timeline.scss';
 
 export interface ITimelineProps {
-	data: Array<ITimelinkBlock>;
+	data: Array<ITimelineBlock>;
 }
 
-export interface ITimelinkBlock {
+export interface ITimelineBlock {
 	heading: string;
 	imageSrc: any;
 	imageAlt: string;
@@ -27,7 +27,8 @@ export class Timeline extends React.Component<ITimelineProps, {}> {
 
 		$(window).scroll(function () {
 			timelineBlock.each(function () {
-				if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.img').hasClass('is-hidden')) {
+				if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 &&
+					$(this).find('.img').hasClass('is-hidden')) {
 					$(this).find('.img, .content').removeClass('is-hidden').addClass('bounce-in');
 				}
 			});

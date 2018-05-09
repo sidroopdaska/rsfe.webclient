@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
+import { Urls } from '../../definitions';
 import './header.scss';
-import { Urls } from '../../definitions/urls';
+
 let meEdited = require('../../assets/me-edited.png');
 
 export interface IHeaderProps { }

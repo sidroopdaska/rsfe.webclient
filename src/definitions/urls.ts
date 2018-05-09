@@ -1,3 +1,6 @@
+/**
+ * Class to hold all the Urls used across the SPA
+ */
 export class Urls {
 	public static PersonalWebsite = 'http://siddharthsharma.io';
 	public static Github = 'http://github.com/sidroopdaska';

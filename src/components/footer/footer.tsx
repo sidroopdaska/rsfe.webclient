@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Row } from 'reactstrap';
+import { Urls, SiteContent } from '../../definitions';
 import './footer.scss';
-import { Urls } from '../../definitions/urls';
 
 export interface IFooterProps { }
 
@@ -10,18 +9,41 @@ export class Footer extends React.Component<IFooterProps, {}> {
 		super(props);
 	}
 
+	public renderSocialMediaList = () => {
+		return (
+			<ul className='social-media-list'>
+				<li>
+					<a href={Urls.Mailto} target='_blank'><i className='fa fa-envelope icon'></i> {SiteContent.EmailId}</a>
+				</li>
+				<li>
+					<a href={SiteContent.Github} target='_blank'><i className='fa fa-github fa-lg'></i><span> {SiteContent.OnlineHandle}</span></a>
+				</li>
+				<li>
+					<a href={SiteContent.LinkedIn} target='_blank'><i className='fa fa-linkedin-square fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
+				</li>
+				<li>
+					<a href={SiteContent.Twitter} target='_blank'><i className='fa fa-twitter fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
+				</li>
+			</ul>
+		);
+	}
+
 	public render() {
 		return (
-			<div>
-				<Row className='justify-content-center'>
-					<h4>I believe we make a <span className='font-weight-bold conclusion'>perfect match</span> Revolut!</h4>
-				</Row>
-				<Row className='justify-content-center'>
-					<p>
-						If you do too, drop me a line at <a target='_blank' href={Urls.Mailto}>hey@siddharthsharma.io</a>
-					</p>
-				</Row>
-			</div>
+			<footer className='footer'>
+				<div className='wrapper'>
+					<div className='content'>
+						{this.renderSocialMediaList()}
+					</div>
+					<div className='content'>
+						<ul className='made-with'>
+							<li>
+								Made with <i className='fa fa-heart pulse' style={{ color: 'red' }}></i> in <span style={{ color: 'black' }}>Dublin</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
 		);
 	}
 }
