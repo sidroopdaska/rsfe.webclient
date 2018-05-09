@@ -26,8 +26,8 @@ export class WhyMe extends React.Component<IWhyMeProps, {}> {
 			let md2: ColumnProps = null;
 
 			if (idx % 2 === 0) {
-				md1 = { size: 7 };
-				md2 = { size: 5 };
+				md1 = { size: 7, order: 1 };
+				md2 = { size: 5, order: 2 };
 			} else {
 				md1 = { size: 7, order: 2 };
 				md2 = { size: 5, order: 1 };
@@ -36,13 +36,13 @@ export class WhyMe extends React.Component<IWhyMeProps, {}> {
 			return (
 				<div key={idx}>
 					<Row>
-						<Col sm='12' md={md1}>
+						<Col sm={{size: 12, order: 2}} md={md1}>
 							<h3 className='heading'>
 								{d.heading1} <span className='text-muted'>{d.heading2}</span>
 							</h3>
 							{d.content}
 						</Col>
-						<Col sm='12' md={md2} style={{ textAlign: 'center' }}>
+						<Col sm={{size: 12, order: 1}} md={md2} style={{ textAlign: 'center' }}>
 							<img src={d.imageSrc} alt={d.imageAlt} height={120} />
 						</Col>
 					</Row>
