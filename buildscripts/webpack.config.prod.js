@@ -12,7 +12,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "[name].bundle.min.js",
-        jsonpFunction: 'rsfe_webpackJsonp'
+        publicPath: 'dist/'
     },
     resolve: {
         // Specify directories for where to look for modules
@@ -22,7 +22,7 @@ const config = {
         extensions: configHelper.extensions
 	},
     module: configHelper.getLoaders(isDebug),
-    plugins: configHelper.getPlugins(false, isDebug, true),
+    plugins: configHelper.getPlugins(false, isDebug, false),
     stats: {
         children: false,
         colors: true,

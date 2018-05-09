@@ -13,7 +13,6 @@ let extensions = [
 
 function getPlugins(rtl, isDebug, minify = false) {
 	let ret = [
-		// new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(true),
 		new webpack.NoEmitOnErrorsPlugin()
 	];
@@ -33,20 +32,8 @@ function getPlugins(rtl, isDebug, minify = false) {
 	}
 
 	if (minify) {
-		// TODO: fix
 		ret.push(new UglifyJsPlugin({
-			output: {
-				comments: false
-			},
-			compress: {
-				warnings: false,
-				pure_getters: true,
-				passes: 3
-			},
-			sourceMap: true,
-			mangle: {
-				keep_fnames: true
-			}
+			sourceMap: true
 		}));
 	}
 
@@ -117,8 +104,6 @@ function getEntry(isDebug, port) {
 	// Note: this can be extended for handling Multi-Page-Apps
 	entry['app'] =
 		isDebug ? [
-			// "webpack-dev-server/client?http://localhost:" + port,
-			// "webpack/hot/dev-server",
 			path.resolve(__dirname, `../src/layout/index.tsx`)
 		] :
 			path.resolve(__dirname, `../src/layout/index.tsx`);
