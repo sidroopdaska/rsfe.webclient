@@ -7,11 +7,21 @@ let extensions = [
 	".ts",
 	".tsx",
 	".js",
+	".jsx",
 	".scss",
 	".json"
 ];
 
-function getPlugins(rtl, isDebug, minify = false) {
+function getEntry(isDebug = true, port = 8080) {
+	let entry = {};
+
+	// Note: this can be extended for handling Multi-Page-Apps
+	entry['app'] = path.resolve(__dirname, `../src/layout/index.tsx`)
+
+	return entry;
+}
+
+function getPlugins(rtl, isDebug = true, minify = false) {
 	let ret = [
 		new webpack.optimize.OccurrenceOrderPlugin(true),
 		new webpack.NoEmitOnErrorsPlugin()
@@ -40,7 +50,7 @@ function getPlugins(rtl, isDebug, minify = false) {
 	return ret;
 }
 
-function getLoaders(isDebug) {
+function getLoaders(isDebug = true) {
 	let scriptLoaders = isDebug ? [
 		'babel-loader',
 		'awesome-typescript-loader',
@@ -83,7 +93,7 @@ function getLoaders(isDebug) {
 				test: /\.scss$/,
 				use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader']
 			},
-			// All files with a .ts or .tsx extension will be handled by 'ts-loader'
+			// All files with a .ts or .tsx extension will be handled by 'awesome-typescript-loader'
 			{
 				test: /\.tsx?$/,
 				exclude: /(node_modules)/,
@@ -96,19 +106,6 @@ function getLoaders(isDebug) {
 	};
 
 	return ret;
-}
-
-function getEntry(isDebug, port) {
-	let entry = {};
-
-	// Note: this can be extended for handling Multi-Page-Apps
-	entry['app'] =
-		isDebug ? [
-			path.resolve(__dirname, `../src/layout/index.tsx`)
-		] :
-			path.resolve(__dirname, `../src/layout/index.tsx`);
-
-	return entry;
 }
 
 module.exports = {
