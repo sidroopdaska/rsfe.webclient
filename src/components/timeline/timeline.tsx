@@ -58,9 +58,17 @@ export class Timeline extends React.Component<ITimelineProps, {}> {
 			return null;
 
 		return (
-			<section className='timeline'>
-				{this.renderTimelineBlocks()}
-			</section>
+			<div>
+				<div className='timeline-title'>
+					<h2>
+						#what <span className='text-muted'>I have done so far</span>
+					</h2>
+				</div>
+				<section className='timeline'>
+					{this.renderTimelineBlocks()}
+				</section>
+			</div>
+
 		);
 	}
 }
