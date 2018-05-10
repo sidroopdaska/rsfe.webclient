@@ -112,7 +112,7 @@ export class SiteContent {
 						PS: Since then I have migrated my <a href={Urls.PersonalWebsite} target='_blank'>personal website</a> to Jekyll.
 					</p>
 				</div>,
-			date: 'May 2016'
+			date: 'Dec, 2015'
 		},
 		{
 			heading: 'Office 365 - Account Management Portal',
@@ -130,7 +130,7 @@ export class SiteContent {
 						&#8226; Analysed user feedback &amp; A/B tested features which resulted in 4.5% increase in subscription renewal rates and 40% increase in user satisfaction <br />
 					</p>
 				</div>,
-			date: 'May 2016'
+			date: 'May, 2016'
 		},
 		{
 			heading: 'Microsoft 365',
@@ -147,7 +147,7 @@ export class SiteContent {
 						&#8226; Developed a module for asynchronously loading React components with dynamic imports. This enabled a 30% reduction in the initial load for the current project, and it’s also being widely adopted by teams in Office 365<br />
 					</p>
 				</div>,
-			date: 'Jun 2017'
+			date: 'Jun, 2017'
 		},
 		{
 			heading: 'Next steps...',
