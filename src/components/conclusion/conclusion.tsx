@@ -18,7 +18,7 @@ export class Conclusion extends React.Component<IConclusionProps, {}> {
 				</Row>
 				<Row className='justify-content-center'>
 					<p>
-						If you do too, drop me a line at <a target='_blank' href={Urls.Mailto}>{SiteContent.OnlineHandle}</a>
+						If you do too, drop me a line at <a target='_blank' href={Urls.Mailto}>{SiteContent.EmailId}</a>
 					</p>
 				</Row>
 			</div>

@@ -25,7 +25,7 @@ export class Header extends React.Component<IHeaderProps, {}> {
 								Hello! My name is <a href={Urls.PersonalWebsite}>Siddharth Sharma</a>
 							</h1>
 							<h3>
-								I would like to help <span className='highlight'>Revolut</span> reach 'Revolut' as a
+								I would like to help <span className='highlight'>Revolut</span> 'Disrupt Banking' as a
 							</h3>
 							<h3 className='desc2'>
 								<span className='highlight'>Senior Front-End Developer</span>

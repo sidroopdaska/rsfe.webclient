@@ -16,13 +16,13 @@ export class Footer extends React.Component<IFooterProps, {}> {
 					<a href={Urls.Mailto} target='_blank'><i className='fa fa-envelope icon'></i> {SiteContent.EmailId}</a>
 				</li>
 				<li>
-					<a href={SiteContent.Github} target='_blank'><i className='fa fa-github fa-lg'></i><span> {SiteContent.OnlineHandle}</span></a>
+					<a href={Urls.Github} target='_blank'><i className='fa fa-github fa-lg'></i><span> {SiteContent.OnlineHandle}</span></a>
 				</li>
 				<li>
-					<a href={SiteContent.LinkedIn} target='_blank'><i className='fa fa-linkedin-square fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
+					<a href={Urls.LinkedIn} target='_blank'><i className='fa fa-linkedin-square fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
 				</li>
 				<li>
-					<a href={SiteContent.Twitter} target='_blank'><i className='fa fa-twitter fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
+					<a href={Urls.Twitter} target='_blank'><i className='fa fa-twitter fa-lg icon'></i><span> {SiteContent.OnlineHandle}</span></a>
 				</li>
 			</ul>
 		);
